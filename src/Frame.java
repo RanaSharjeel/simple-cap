@@ -1,19 +1,27 @@
+import Comps.ToolsPanel;
+
 import javax.swing.*;
+import java.awt.*;
+
 
 public class Frame extends JFrame {
-    String title;
-    static final int WIDTH = 640;
-    static final int HEIGHT = 125;
-    public Frame(String title){
-        this.title = title;
-        setTitle(title);
+    public static final int W_WIDTH = 640;
+    public static final int W_HEIGHT = 125;
 
+    public Frame(String title){
+        setTitle(title);
+        setLayout(new BorderLayout());
+        
+        // Init Components
+        ToolsPanel tools = new ToolsPanel();
+
+        // Add Components
+        add(tools);
 
         // Window settings
         setDefaultCloseOperation(EXIT_ON_CLOSE);
-        setSize(WIDTH, HEIGHT);
+        setSize(W_WIDTH, W_HEIGHT);
         setLocationRelativeTo(null);
-        setLayout(null);
         setVisible(true);
     }
 }
