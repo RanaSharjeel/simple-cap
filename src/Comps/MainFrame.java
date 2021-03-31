@@ -1,17 +1,17 @@
-import Comps.ToolsPanel;
+package Comps;
 
 import javax.swing.*;
 import java.awt.*;
 
 
-public class Frame extends JFrame {
+public class MainFrame extends JFrame {
     public static final int W_WIDTH = 640;
     public static final int W_HEIGHT = 125;
-
-    public Frame(String title){
+    public static MainFrame[] instances = new MainFrame[1];
+    public MainFrame(String title){
         setTitle(title);
         setLayout(new BorderLayout());
-        
+
         // Init Components
         ToolsPanel tools = new ToolsPanel();
 
@@ -23,5 +23,14 @@ public class Frame extends JFrame {
         setSize(W_WIDTH, W_HEIGHT);
         setLocationRelativeTo(null);
         setVisible(true);
+        instances[0] = this;
+    }
+
+    // Minimize window
+    public static void minimize(boolean doit){
+        if(doit)
+            instances[0].setState(Frame.ICONIFIED);
+        else
+            instances[0].setState(Frame.NORMAL);
     }
 }

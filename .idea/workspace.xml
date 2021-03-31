@@ -3,8 +3,15 @@
   <component name="ChangeListManager">
     <list default="true" id="0a446e88-4473-4886-81b8-f6380f4697c7" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/simple-cap/Frame.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/simple-cap/Frame.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Frame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Frame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/simple-cap/Comps/Screenshot.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/simple-cap/Comps/Screenshot.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/simple-cap/Comps/ScreenshotAL.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/simple-cap/Comps/ScreenshotAL.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/simple-cap/Comps/ToolsPanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/simple-cap/Comps/ToolsPanel.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/simple-cap/Frame.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/simple-cap/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/simple-cap/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Comps/Screenshot.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Comps/Screenshot.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Comps/ToolsPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Comps/ToolsPanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Frame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Comps/MainFrame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -73,7 +80,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1617208171621</updated>
-      <workItem from="1617208175488" duration="3948000" />
+      <workItem from="1617208175488" duration="7283000" />
     </task>
     <servers />
   </component>
@@ -117,29 +124,29 @@
     </option>
   </component>
   <component name="WindowStateProjectService">
-    <state x="446" y="65" key="#com.intellij.ide.util.MemberChooser" timestamp="1617211971346">
+    <state x="446" y="65" key="#com.intellij.ide.util.MemberChooser" timestamp="1617214772680">
       <screen x="0" y="0" width="1280" height="720" />
     </state>
-    <state x="446" y="65" key="#com.intellij.ide.util.MemberChooser/0.0.1280.720@0.0.1280.720" timestamp="1617211971346" />
+    <state x="446" y="65" key="#com.intellij.ide.util.MemberChooser/0.0.1280.720@0.0.1280.720" timestamp="1617214772680" />
     <state x="263" y="0" key="CommitChangelistDialog2" timestamp="1617209086406">
       <screen x="0" y="0" width="1280" height="720" />
     </state>
     <state x="263" y="0" key="CommitChangelistDialog2/0.0.1280.720@0.0.1280.720" timestamp="1617209086406" />
-    <state width="1236" height="156" key="GridCell.Tab.0.bottom" timestamp="1617212013907">
+    <state width="1236" height="156" key="GridCell.Tab.0.bottom" timestamp="1617215162941">
       <screen x="0" y="0" width="1280" height="720" />
     </state>
-    <state width="1236" height="156" key="GridCell.Tab.0.bottom/0.0.1280.720@0.0.1280.720" timestamp="1617212013907" />
-    <state width="1236" height="156" key="GridCell.Tab.0.center" timestamp="1617212013907">
+    <state width="1236" height="156" key="GridCell.Tab.0.bottom/0.0.1280.720@0.0.1280.720" timestamp="1617215162941" />
+    <state width="1236" height="156" key="GridCell.Tab.0.center" timestamp="1617215162941">
       <screen x="0" y="0" width="1280" height="720" />
     </state>
-    <state width="1236" height="156" key="GridCell.Tab.0.center/0.0.1280.720@0.0.1280.720" timestamp="1617212013907" />
-    <state width="1236" height="156" key="GridCell.Tab.0.left" timestamp="1617212013907">
+    <state width="1236" height="156" key="GridCell.Tab.0.center/0.0.1280.720@0.0.1280.720" timestamp="1617215162941" />
+    <state width="1236" height="156" key="GridCell.Tab.0.left" timestamp="1617215162941">
       <screen x="0" y="0" width="1280" height="720" />
     </state>
-    <state width="1236" height="156" key="GridCell.Tab.0.left/0.0.1280.720@0.0.1280.720" timestamp="1617212013907" />
-    <state width="1236" height="156" key="GridCell.Tab.0.right" timestamp="1617212013907">
+    <state width="1236" height="156" key="GridCell.Tab.0.left/0.0.1280.720@0.0.1280.720" timestamp="1617215162941" />
+    <state width="1236" height="156" key="GridCell.Tab.0.right" timestamp="1617215162941">
       <screen x="0" y="0" width="1280" height="720" />
     </state>
-    <state width="1236" height="156" key="GridCell.Tab.0.right/0.0.1280.720@0.0.1280.720" timestamp="1617212013907" />
+    <state width="1236" height="156" key="GridCell.Tab.0.right/0.0.1280.720@0.0.1280.720" timestamp="1617215162941" />
   </component>
 </project>

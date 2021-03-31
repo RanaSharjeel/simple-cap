@@ -1,5 +1,7 @@
+import Comps.MainFrame;
+
 public class Main {
     public static void main(String[] args){
-        Frame f = new Frame("simple-cap");
+        MainFrame f = new MainFrame("simple-cap");
     }
 }
