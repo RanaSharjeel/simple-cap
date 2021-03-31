@@ -1,5 +1,7 @@
 package Comps;
 
+import com.sun.awt.AWTUtilities;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.MouseAdapter;
@@ -10,6 +12,7 @@ import java.awt.event.MouseEvent;
     The purpose is to draw the area you wish to extract the screenshot from on this frame
  */
 public class ScreenshotArea extends JFrame {
+
     public ScreenshotArea(){
         // Get screen dimensions and set selectable area to encompass it
         Rectangle r = GraphicsEnvironment.getLocalGraphicsEnvironment().getMaximumWindowBounds();
@@ -18,8 +21,7 @@ public class ScreenshotArea extends JFrame {
         setSize(r.width, r.height);
 
         // Sets to transparent
-        setOpacity(0.3f);
-        setBackground(Color.WHITE);
+        AWTUtilities.setWindowOpaque(this, false);
 
         // Crop drawing panel
         setContentPane(new DrawCrop());
@@ -27,6 +29,7 @@ public class ScreenshotArea extends JFrame {
         // Minimize tools GUI
         MainFrame.minimize(true);
         setVisible(true);
+
     }
 }
 
@@ -34,28 +37,34 @@ public class ScreenshotArea extends JFrame {
 // This class is adapted from https://stackoverflow.com/a/40945778
 class DrawCrop extends JPanel {
     int x1, y1, x2, y2;
+    float alpha = 0.3f;
+    Color bg_color = new Color(1.0f, 1.0f,1.0f, alpha);
 
     public DrawCrop(){
         x1 = x2 = y1 = y2 = 0;
         MouseManager mouse = new MouseManager();
         addMouseListener(mouse);
         addMouseMotionListener(mouse);
-    }
-
-    public void drawRect(Graphics g, int x1, int y1, int x2, int y2){
-        int px = Math.min(x1, x2);
-        int py = Math.min(y1, y2);
-        int pw = Math.abs(x1-x2);
-        int ph = Math.abs(y1-y2);
-        g.fillRect(px, py, pw, ph);
+        setOpaque(false);
+        setLayout(null);
+        repaint();
     }
 
     @Override
     protected void paintComponent(Graphics g) {
         super.paintComponent(g);
-        g.setColor(Color.red);
-        // Draw rect
-        drawRect(g, x1, y1, x2, y2);
+        // Draw background (translucent white)
+        g.setColor(bg_color);
+        g.fillRect(0,0,1920,1080);
+
+        // Draw the rectangle (cropping area)
+        int px = Math.min(x1, x2);
+        int py = Math.min(y1, y2);
+        int pw = Math.abs(x1-x2);
+        int ph = Math.abs(y1-y2);
+
+        g.clearRect(px, py, pw, ph);
+
     }
 
     // Private class : Mouse adapter
