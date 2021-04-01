@@ -26,5 +26,6 @@ class ScreenshotAL implements ActionListener{
     @Override
     public void actionPerformed(ActionEvent e) {
         new ScreenshotArea(Screenshot.Mode.COPY);
+
     }
 }

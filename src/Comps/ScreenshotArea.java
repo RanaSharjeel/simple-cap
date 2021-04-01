@@ -5,20 +5,26 @@ import com.sun.awt.AWTUtilities;
 import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ComponentAdapter;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
 
 /*
     This class creates a borderless transparent frame that covers the entire screen
     The purpose is to draw the area you wish to extract the screenshot from on this frame
  */
 public class ScreenshotArea extends JFrame {
-
     Screenshot.Mode mode;
-    public ScreenshotArea(Screenshot.Mode mode){
+    static int[] dimensions = null;
+    static final Object lock = new Object();
+    public ScreenshotArea(Screenshot.Mode mode) {
         this.mode = mode;
         // Get screen dimensions and set selectable area to encompass it
         Rectangle r = GraphicsEnvironment.getLocalGraphicsEnvironment().getMaximumWindowBounds();
@@ -31,6 +37,7 @@ public class ScreenshotArea extends JFrame {
 
         // Crop drawing panel
         setContentPane(new DrawCrop(r.width, r.height));
+
         /*
         try{
                 Robot r = new Robot();
@@ -47,6 +54,26 @@ public class ScreenshotArea extends JFrame {
         // Minimize tools GUI
         MainFrame.minimize(true);
         setVisible(true);
+
+        /*
+        *   Start a new thread and wait for screenshot dimensions to be returned
+        *   Thread is observing dimensions array and waits till it has some values
+        *   before proceeding.
+        */
+        Thread t = new Thread(() -> {
+            synchronized (lock){
+                while(dimensions == null){
+                    try{
+                        lock.wait();
+                    }
+                    catch (InterruptedException e){
+                        e.printStackTrace();
+                    }
+                }
+                System.out.println(Arrays.toString(dimensions));
+            }
+        });
+        t.start();
 
     }
 }
@@ -74,6 +101,7 @@ class DrawCrop extends JPanel {
         setOpaque(false);
         setLayout(null);
         repaint();
+
     }
 
     // Return dimensions of cropped area in array format [x , y , width, height]
@@ -117,8 +145,11 @@ class DrawCrop extends JPanel {
             y2 = e.getY();
             repaint();
 
-            // Area locked in - SAVE/COPY Screenshot
-            int[] dims = getScreenDim(x1,y1,x2,y2);
+            // Area locked in - return rectangle dimensions and notify thread
+            synchronized (ScreenshotArea.lock){
+                ScreenshotArea.dimensions = getScreenDim(x1,y1,x2,y2);
+                ScreenshotArea.lock.notify();
+            }
 
         }
 
