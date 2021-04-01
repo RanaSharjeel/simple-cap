@@ -5,6 +5,7 @@ import com.sun.awt.AWTUtilities;
 import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
+import java.awt.datatransfer.*;
 import java.awt.event.ComponentAdapter;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
@@ -20,10 +21,13 @@ import java.util.List;
     This class creates a borderless transparent frame that covers the entire screen
     The purpose is to draw the area you wish to extract the screenshot from on this frame
  */
-public class ScreenshotArea extends JFrame {
+public class ScreenshotArea extends JFrame implements ClipboardOwner {
+
     Screenshot.Mode mode;
     static int[] dimensions = null;
     static final Object lock = new Object();
+
+
     public ScreenshotArea(Screenshot.Mode mode) {
         this.mode = mode;
         // Get screen dimensions and set selectable area to encompass it
@@ -36,20 +40,9 @@ public class ScreenshotArea extends JFrame {
         AWTUtilities.setWindowOpaque(this, false);
 
         // Crop drawing panel
-        setContentPane(new DrawCrop(r.width, r.height));
-
-        /*
-        try{
-                Robot r = new Robot();
-                String path = "src/screen.jpg";
-                Rectangle cap = new Rectangle(dims[0], dims[1], dims[2], dims[3]);
-                BufferedImage img = r.createScreenCapture(cap);
-                ImageIO.write(img, "jpg", new File(path));
-                System.out.println("Screenshot saved");
-            } catch (AWTException | IOException ex){
-                System.out.println(ex);
-            }
-         */
+        //setContentPane(new DrawCrop(r.width, r.height));
+        DrawCrop crop = new DrawCrop(r.width, r.height);
+        add(crop);
 
         // Minimize tools GUI
         MainFrame.minimize(true);
@@ -59,6 +52,7 @@ public class ScreenshotArea extends JFrame {
         *   Start a new thread and wait for screenshot dimensions to be returned
         *   Thread is observing dimensions array and waits till it has some values
         *   before proceeding.
+        *   Finish by processing the screenshot data
         */
         Thread t = new Thread(() -> {
             synchronized (lock){
@@ -70,13 +64,77 @@ public class ScreenshotArea extends JFrame {
                         e.printStackTrace();
                     }
                 }
+                /* Process screenshot data */
                 System.out.println(Arrays.toString(dimensions));
+                // Remove drawable crop area from frame
+                remove(crop);
+                repaint();
+                // MODE :   COPY TO CLIPBOARD
+                if(mode.equals(Screenshot.Mode.COPY)){
+                    try {
+                        Robot robot = new Robot();
+                        Rectangle cap = new Rectangle(dimensions[0], dimensions[1], dimensions[2], dimensions[3]);
+                        BufferedImage img = robot.createScreenCapture(cap);
+                        TransferableImage transferableImg = new TransferableImage(img);
+                        Clipboard c = Toolkit.getDefaultToolkit().getSystemClipboard();
+                        c.setContents(transferableImg, this);
+
+                    } catch (AWTException e) {
+                        e.printStackTrace();
+                    }
+
+                }
             }
         });
         t.start();
+    }
 
+    @Override
+    public void lostOwnership(Clipboard clipboard, Transferable contents) {
+        System.out.println("Lost Clipboard ownership");
     }
 }
+
+
+
+/*
+    Transferable Image implementation used to transfer to system clipboard
+ */
+class TransferableImage implements Transferable{
+
+    Image img;
+    public TransferableImage(Image img){
+        this.img = img;
+    }
+
+    @Override
+    public DataFlavor[] getTransferDataFlavors() {
+        DataFlavor[] flavors = new DataFlavor[1];
+        flavors[0] = DataFlavor.imageFlavor;
+        return flavors;
+    }
+
+    @Override
+    public boolean isDataFlavorSupported(DataFlavor flavor) {
+        DataFlavor[] flavors = getTransferDataFlavors();
+        for (DataFlavor dataFlavor : flavors) {
+            if (flavor.equals(dataFlavor))
+                return true;
+        }
+        return false;
+    }
+
+    @Override
+    public Object getTransferData(DataFlavor flavor) throws UnsupportedFlavorException, IOException {
+        if(flavor.equals(DataFlavor.imageFlavor) && img != null)
+            return img;
+        else
+            throw new UnsupportedFlavorException(flavor);
+    }
+}
+
+
+
 
 // Area you can crop out using the mouse drag
 // This class is adapted from https://stackoverflow.com/a/40945778
