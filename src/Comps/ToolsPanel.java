@@ -22,7 +22,7 @@ public class ToolsPanel extends JPanel {
         // Init Components
         Screenshot b1 = new Screenshot("Copy");
         Saveshot b2 = new Saveshot("Save");
-        JButton b3 = new JButton("About");
+        Help b3 = new Help("Help");
 
         // Add Components
         add(b1);
