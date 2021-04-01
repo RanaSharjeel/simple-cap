@@ -7,17 +7,12 @@ import javax.swing.*;
 import javax.swing.filechooser.FileNameExtensionFilter;
 import java.awt.*;
 import java.awt.datatransfer.*;
-import java.awt.event.ComponentAdapter;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.awt.event.WindowEvent;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.List;
 
 /*
     This class creates a borderless transparent frame that covers the entire screen
@@ -25,12 +20,12 @@ import java.util.List;
  */
 public class ScreenshotArea extends JFrame implements ClipboardOwner {
 
-    Screenshot.Mode mode;
+    ToolsPanel.Mode mode;
     static int[] dimensions = null;
     static final Object lock = new Object();
     BufferedImage img;
 
-    public ScreenshotArea(Screenshot.Mode mode) {
+    public ScreenshotArea(ToolsPanel.Mode mode) {
         this.mode = mode;
         // Get screen dimensions and set selectable area to encompass it
         Rectangle r = GraphicsEnvironment.getLocalGraphicsEnvironment().getMaximumWindowBounds();
@@ -87,14 +82,14 @@ public class ScreenshotArea extends JFrame implements ClipboardOwner {
 
 
                 // MODE :   COPY TO CLIPBOARD
-                if(mode.equals(Screenshot.Mode.COPY)){
+                if(mode.equals(ToolsPanel.Mode.COPY)){
                     TransferableImage transferableImg = new TransferableImage(img);
                     Clipboard c = Toolkit.getDefaultToolkit().getSystemClipboard();
                     c.setContents(transferableImg, this);
                 }
 
                 // MODE :   SAVE TO COMPUTER
-                else if(mode.equals(Screenshot.Mode.SAVE)){
+                else if(mode.equals(ToolsPanel.Mode.SAVE)){
                     JFileChooser jfc = new JFileChooser();
                     // Set extensions
                     jfc.setAcceptAllFileFilterUsed(false);

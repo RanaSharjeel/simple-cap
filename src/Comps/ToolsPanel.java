@@ -8,6 +8,11 @@ import java.awt.*;
     This class provides the main GUI for the app, displaying all the buttons and options
 */
 public class ToolsPanel extends JPanel {
+    enum Mode{
+        COPY,
+        SAVE
+    }
+
     public ToolsPanel(){
         // Init panel
         setBackground(Color.RED);
@@ -15,9 +20,8 @@ public class ToolsPanel extends JPanel {
         setBorder(new EmptyBorder(10,10,10,10)); // Padding
 
         // Init Components
-        Screenshot b1 = new Screenshot("Screen");
-            // TEMP COMPS
-        JButton b2 = new JButton("Save");
+        Screenshot b1 = new Screenshot("Copy");
+        Saveshot b2 = new Saveshot("Save");
         JButton b3 = new JButton("About");
 
         // Add Components
