@@ -1,14 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="0a446e88-4473-4886-81b8-f6380f4697c7" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/simple-cap/Comps/DrawCrop$MouseManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/simple-cap/Comps/DrawCrop$MouseManager.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/simple-cap/Comps/DrawCrop.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/simple-cap/Comps/DrawCrop.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/simple-cap/Comps/ScreenshotArea.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/simple-cap/Comps/ScreenshotArea.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Comps/Screenshot.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Comps/Screenshot.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Comps/ScreenshotArea.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Comps/ScreenshotArea.java" afterDir="false" />
-    </list>
+    <list default="true" id="0a446e88-4473-4886-81b8-f6380f4697c7" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -79,7 +72,7 @@
       <workItem from="1617208175488" duration="11462000" />
       <workItem from="1617225206343" duration="3626000" />
       <workItem from="1617232136112" duration="2642000" />
-      <workItem from="1617271198788" duration="5748000" />
+      <workItem from="1617271198788" duration="6364000" />
     </task>
     <servers />
   </component>
