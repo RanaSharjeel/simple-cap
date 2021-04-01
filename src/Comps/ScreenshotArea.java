@@ -96,8 +96,11 @@ public class ScreenshotArea extends JFrame implements ClipboardOwner {
                 // MODE :   SAVE TO COMPUTER
                 else if(mode.equals(Screenshot.Mode.SAVE)){
                     JFileChooser jfc = new JFileChooser();
+                    // Set extensions
+                    jfc.setAcceptAllFileFilterUsed(false);
                     jfc.setFileFilter(new FileNameExtensionFilter("png", "png"));
                     jfc.setFileFilter(new FileNameExtensionFilter("jpg", "jpg"));
+
                     if(jfc.showSaveDialog(null) == JFileChooser.APPROVE_OPTION){
                         // Get desired save file location
                         File file = jfc.getSelectedFile();
@@ -109,7 +112,7 @@ public class ScreenshotArea extends JFrame implements ClipboardOwner {
                             e.printStackTrace();
                         }
                     }
-                    else{
+                    else{ // Cancel was pressed, Alert and exit app
                         JOptionPane.showMessageDialog(null, "No File Chosen.");
                     }
                 }
@@ -216,7 +219,7 @@ class DrawCrop extends JPanel {
 
         // Draw green outline
         g.setColor(outline);
-        g.drawRect(dims[0], dims[1], dims[2], dims[3]);
+        g.drawRect(dims[0]-2, dims[1]-2, dims[2]+4, dims[3]+4);
 
     }
 
