@@ -6,6 +6,7 @@
       <change beforePath="$PROJECT_DIR$/out/production/simple-cap/Comps/DrawCrop$MouseManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/simple-cap/Comps/DrawCrop$MouseManager.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/simple-cap/Comps/DrawCrop.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/simple-cap/Comps/DrawCrop.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/simple-cap/Comps/ScreenshotArea.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/simple-cap/Comps/ScreenshotArea.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Comps/Screenshot.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Comps/Screenshot.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Comps/ScreenshotArea.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Comps/ScreenshotArea.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -77,7 +78,8 @@
       <updated>1617208171621</updated>
       <workItem from="1617208175488" duration="11462000" />
       <workItem from="1617225206343" duration="3626000" />
-      <workItem from="1617232136112" duration="2556000" />
+      <workItem from="1617232136112" duration="2642000" />
+      <workItem from="1617271198788" duration="2625000" />
     </task>
     <servers />
   </component>
@@ -129,21 +131,21 @@
       <screen x="0" y="0" width="1280" height="720" />
     </state>
     <state x="263" y="0" key="CommitChangelistDialog2/0.0.1280.720@0.0.1280.720" timestamp="1617209086406" />
-    <state width="1236" height="103" key="GridCell.Tab.0.bottom" timestamp="1617234737590">
+    <state width="1236" height="103" key="GridCell.Tab.0.bottom" timestamp="1617273194070">
       <screen x="0" y="0" width="1280" height="720" />
     </state>
-    <state width="1236" height="103" key="GridCell.Tab.0.bottom/0.0.1280.720@0.0.1280.720" timestamp="1617234737590" />
-    <state width="1236" height="103" key="GridCell.Tab.0.center" timestamp="1617234737589">
+    <state width="1236" height="103" key="GridCell.Tab.0.bottom/0.0.1280.720@0.0.1280.720" timestamp="1617273194070" />
+    <state width="1236" height="103" key="GridCell.Tab.0.center" timestamp="1617273194070">
       <screen x="0" y="0" width="1280" height="720" />
     </state>
-    <state width="1236" height="103" key="GridCell.Tab.0.center/0.0.1280.720@0.0.1280.720" timestamp="1617234737589" />
-    <state width="1236" height="103" key="GridCell.Tab.0.left" timestamp="1617234737589">
+    <state width="1236" height="103" key="GridCell.Tab.0.center/0.0.1280.720@0.0.1280.720" timestamp="1617273194070" />
+    <state width="1236" height="103" key="GridCell.Tab.0.left" timestamp="1617273194070">
       <screen x="0" y="0" width="1280" height="720" />
     </state>
-    <state width="1236" height="103" key="GridCell.Tab.0.left/0.0.1280.720@0.0.1280.720" timestamp="1617234737589" />
-    <state width="1236" height="103" key="GridCell.Tab.0.right" timestamp="1617234737589">
+    <state width="1236" height="103" key="GridCell.Tab.0.left/0.0.1280.720@0.0.1280.720" timestamp="1617273194070" />
+    <state width="1236" height="103" key="GridCell.Tab.0.right" timestamp="1617273194070">
       <screen x="0" y="0" width="1280" height="720" />
     </state>
-    <state width="1236" height="103" key="GridCell.Tab.0.right/0.0.1280.720@0.0.1280.720" timestamp="1617234737589" />
+    <state width="1236" height="103" key="GridCell.Tab.0.right/0.0.1280.720@0.0.1280.720" timestamp="1617273194070" />
   </component>
 </project>

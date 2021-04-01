@@ -9,6 +9,10 @@ import java.awt.event.ActionListener;
     Screenshot Button : Take a screenshot when clicked on and copy it to the clipboard
  */
 public class Screenshot extends JButton {
+    enum Mode{
+        COPY,
+        SAVE
+    }
     String name;
     public Screenshot(String name) {
         this.name = name;
@@ -21,8 +25,6 @@ public class Screenshot extends JButton {
 class ScreenshotAL implements ActionListener{
     @Override
     public void actionPerformed(ActionEvent e) {
-        System.out.println("Works");
-        new ScreenshotArea();
-
+        new ScreenshotArea(Screenshot.Mode.COPY);
     }
 }
