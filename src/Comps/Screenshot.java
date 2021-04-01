@@ -25,7 +25,7 @@ public class Screenshot extends JButton {
 class ScreenshotAL implements ActionListener{
     @Override
     public void actionPerformed(ActionEvent e) {
-        new ScreenshotArea(Screenshot.Mode.COPY);
+        new ScreenshotArea(Screenshot.Mode.SAVE);
 
     }
 }

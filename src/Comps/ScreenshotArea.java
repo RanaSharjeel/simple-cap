@@ -4,11 +4,13 @@ import com.sun.awt.AWTUtilities;
 
 import javax.imageio.ImageIO;
 import javax.swing.*;
+import javax.swing.filechooser.FileNameExtensionFilter;
 import java.awt.*;
 import java.awt.datatransfer.*;
 import java.awt.event.ComponentAdapter;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.awt.event.WindowEvent;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
@@ -26,7 +28,7 @@ public class ScreenshotArea extends JFrame implements ClipboardOwner {
     Screenshot.Mode mode;
     static int[] dimensions = null;
     static final Object lock = new Object();
-
+    BufferedImage img;
 
     public ScreenshotArea(Screenshot.Mode mode) {
         this.mode = mode;
@@ -64,26 +66,56 @@ public class ScreenshotArea extends JFrame implements ClipboardOwner {
                         e.printStackTrace();
                     }
                 }
-                /* Process screenshot data */
-                System.out.println(Arrays.toString(dimensions));
+                // ***********************************
+                // (CHECKPOINT) AREA CROP DATA RETURNED
+                // ***********************************
+
+                    /* Process screenshot data */
                 // Remove drawable crop area from frame
                 remove(crop);
+                revalidate();
                 repaint();
+
+                // Capture the screenshot and store it in a buffered image object
+                try{
+                    Robot robot = new Robot();
+                    Rectangle cap = new Rectangle(dimensions[0], dimensions[1], dimensions[2], dimensions[3]);
+                    img = robot.createScreenCapture(cap);
+                } catch (AWTException e){
+                    e.printStackTrace();
+                }
+
+
                 // MODE :   COPY TO CLIPBOARD
                 if(mode.equals(Screenshot.Mode.COPY)){
-                    try {
-                        Robot robot = new Robot();
-                        Rectangle cap = new Rectangle(dimensions[0], dimensions[1], dimensions[2], dimensions[3]);
-                        BufferedImage img = robot.createScreenCapture(cap);
-                        TransferableImage transferableImg = new TransferableImage(img);
-                        Clipboard c = Toolkit.getDefaultToolkit().getSystemClipboard();
-                        c.setContents(transferableImg, this);
-
-                    } catch (AWTException e) {
-                        e.printStackTrace();
-                    }
-
+                    TransferableImage transferableImg = new TransferableImage(img);
+                    Clipboard c = Toolkit.getDefaultToolkit().getSystemClipboard();
+                    c.setContents(transferableImg, this);
                 }
+
+                // MODE :   SAVE TO COMPUTER
+                else if(mode.equals(Screenshot.Mode.SAVE)){
+                    JFileChooser jfc = new JFileChooser();
+                    jfc.setFileFilter(new FileNameExtensionFilter("png", "png"));
+                    jfc.setFileFilter(new FileNameExtensionFilter("jpg", "jpg"));
+                    if(jfc.showSaveDialog(null) == JFileChooser.APPROVE_OPTION){
+                        // Get desired save file location
+                        File file = jfc.getSelectedFile();
+                        // Save the file
+                        try {
+                            String ext = jfc.getFileFilter().getDescription();
+                            ImageIO.write(img, "png", new File(file.getAbsolutePath()+"."+ext));
+                        } catch (IOException e) {
+                            e.printStackTrace();
+                        }
+                    }
+                    else{
+                        JOptionPane.showMessageDialog(null, "No File Chosen.");
+                    }
+                }
+
+                // Shutdown application
+                dispatchEvent(new WindowEvent(this, WindowEvent.WINDOW_CLOSING));
             }
         });
         t.start();
