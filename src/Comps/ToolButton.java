@@ -10,8 +10,10 @@ public abstract class ToolButton extends JButton {
         this.name = name;
         // Look
         setText(name);
+
         setBackground(new Color(255,215,0));
         setFont(new Font("Tahoma", Font.BOLD, 14));
         setFocusPainted(false);
+
     }
 }

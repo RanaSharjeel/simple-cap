@@ -21,6 +21,7 @@ public class Screenshot extends ToolButton {
 class ScreenshotAL implements ActionListener{
     @Override
     public void actionPerformed(ActionEvent e) {
+
         new ScreenshotArea(ToolsPanel.Mode.COPY);
 
     }

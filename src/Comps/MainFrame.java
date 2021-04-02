@@ -8,7 +8,7 @@ public class MainFrame extends JFrame {
     public static final int W_WIDTH = 640;
     public static final int W_HEIGHT = 125;
     public static MainFrame[] instances = new MainFrame[1];
-    public MainFrame(String title){
+    public MainFrame(String title) throws ClassNotFoundException, UnsupportedLookAndFeelException, InstantiationException, IllegalAccessException {
         setTitle(title);
         setLayout(new BorderLayout());
 
@@ -19,6 +19,7 @@ public class MainFrame extends JFrame {
         add(tools);
 
         // Window settings
+        UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
         setIconImage(new ImageIcon("res/icon.png").getImage());
         setResizable(false);
         setDefaultCloseOperation(EXIT_ON_CLOSE);

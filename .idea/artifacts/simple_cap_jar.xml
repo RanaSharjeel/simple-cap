@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="simple-cap:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/simple_cap_jar</output-path>
+    <root id="archive" name="simple-cap.jar">
+      <element id="module-output" name="simple-cap" />
+    </root>
+  </artifact>
+</component>

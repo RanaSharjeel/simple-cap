@@ -79,6 +79,7 @@ public class Help extends ToolButton {
         addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+
                 JLabel label = new JLabel(html);
                 label.setFont(new Font("Arial", Font.PLAIN, 24));
 
