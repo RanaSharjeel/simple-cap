@@ -7,7 +7,7 @@
 <!-- PROJECT LOGO -->
 <br />
 <p align="center">
-  <a href="https://github.com/othneildrew/Best-README-Template">
+  <a href="https://github.com/RanaSharjeel/simple-cap">
     <img src="res/logo.png" alt="Logo" width="80" height="80">
   </a>
 
