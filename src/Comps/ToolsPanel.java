@@ -15,7 +15,7 @@ public class ToolsPanel extends JPanel {
 
     public ToolsPanel(){
         // Init panel
-        setBackground(Color.RED);
+        setBackground(new Color(144,238,144));
         setLayout(new GridLayout(1,0, 25, 0));
         setBorder(new EmptyBorder(10,10,10,10)); // Padding
 
