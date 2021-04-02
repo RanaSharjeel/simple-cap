@@ -1,6 +1,8 @@
+
 [![LinkedIn][linkedin-shield]][linkedin-url]
 [![Apache License][license-shield]][license-url]
 [![Twitter][twitter-shield]][twitter-url]
+
 
 <!-- PROJECT LOGO -->
 <br />
@@ -17,7 +19,7 @@
     <br />
     <a href="https://youtu.be/zfDVTm_fjp0">Video Demo</a>
     ·
-    <a href="">Download</a>
+    <a href="https://github.com/RanaSharjeel/simple-cap/releases/tag/1.0">Download</a>
     ·
     <a href="https://github.com/RanaSharjeel/simple-cap/issues">Report Bug</a>
   </p>
@@ -43,6 +45,40 @@ That is all. I usually use screenshotting/cropping applications to copy code sni
 ### Built With
 
 This was made in raw Java using the [Swing API](https://docs.oracle.com/javase/7/docs/api/javax/swing/package-summary.html)
+
+
+<!-- GETTING STARTED -->
+## Download
+
+As of `4/2/2021` there is a single release for the Windows x64 platform which can be downloaded from the [releases page](https://github.com/RanaSharjeel/simple-cap/releases/tag/1.0).
+
+### Prerequisites
+
+You are required to have JDK installed as this was built in Java. It needs to use the Java Runtime Environment (JRE) to launch. By default it will try to access the JRE directory from `%JAVA_HOME%/jre` (assuming `JAVA_HOME` points to the jdk directory). You can change it using the `simplecap.xml` config file (found in the installation directory). Find the `<path>` tag within the `<jre>` tag and replace it with the JRE directory path. Example:
+
+```xml
+    <jre>
+    <path>%JAVA_HOME%/jre</path>
+    .
+    .
+    .
+    </jre>
+  ```
+
+### Installation
+
+1. Launch `simplecapInstaller.exe`
+
+2. Browse to install directory of your choice
+
+3. Optionally create Desktop shortcut
+
+4. Click `Next` to continue
+
+5. Click `Install` and wait
+
+6. Optionally launch directly from setup or browse to your install directory and launch with `simplecap.exe`
+
 
 
 <!-- LICENSE -->
