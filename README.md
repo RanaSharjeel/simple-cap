@@ -103,4 +103,4 @@ Project Link: [https://github.com/RanaSharjeel/simple-cap](https://github.com/Ra
 [license-url]: https://github.com/RanaSharjeel/simple-cap/blob/main/LICENSE
 [twitter-shield]: https://img.shields.io/badge/-TWITTER-lightgrey?logo=twitter
 [twitter-url]: https://twitter.com/pitu_dev
-[product-screenshot]: https://github.com/RanaSharjeel/simple-cap/blob/main/res/product.png
+[product-screenshot]: https://github.com/RanaSharjeel/simple-cap/blob/main/res/Capture.PNG
