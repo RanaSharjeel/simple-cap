@@ -19,6 +19,8 @@ public class MainFrame extends JFrame {
         add(tools);
 
         // Window settings
+        setIconImage(new ImageIcon("res/icon.png").getImage());
+        setResizable(false);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setSize(W_WIDTH, W_HEIGHT);
         setLocationRelativeTo(null);

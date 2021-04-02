@@ -31,6 +31,7 @@ public class ScreenshotArea extends JFrame implements ClipboardOwner {
         Rectangle r = GraphicsEnvironment.getLocalGraphicsEnvironment().getMaximumWindowBounds();
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setUndecorated(true);
+        setIconImage(new ImageIcon("res/icon.png").getImage());
         setSize(r.width, r.height);
 
         // Sets to transparent
@@ -96,7 +97,7 @@ public class ScreenshotArea extends JFrame implements ClipboardOwner {
                     jfc.setFileFilter(new FileNameExtensionFilter("png", "png"));
                     jfc.setFileFilter(new FileNameExtensionFilter("jpg", "jpg"));
 
-                    if(jfc.showSaveDialog(null) == JFileChooser.APPROVE_OPTION){
+                    if(jfc.showSaveDialog(this) == JFileChooser.APPROVE_OPTION){
                         // Get desired save file location
                         File file = jfc.getSelectedFile();
                         // Save the file

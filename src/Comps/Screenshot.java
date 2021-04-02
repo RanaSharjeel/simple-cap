@@ -1,6 +1,6 @@
 package Comps;
 
-import javax.swing.*;
+
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -8,16 +8,14 @@ import java.awt.event.ActionListener;
 /*
     Screenshot Button : Take a screenshot when clicked on and copy it to the clipboard
  */
-public class Screenshot extends JButton {
-
-    String name;
+public class Screenshot extends ToolButton {
 
     public Screenshot(String name) {
-        this.name = name;
-        setText(name);
+        super(name);
         this.addActionListener(new ScreenshotAL());
     }
 }
+
 
 // The on click listener for the button
 class ScreenshotAL implements ActionListener{

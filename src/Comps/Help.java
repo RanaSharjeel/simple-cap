@@ -5,8 +5,8 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class Help extends JButton {
-    String name;
+public class Help extends ToolButton {
+
     String html = "<html>\n" +
             "<body>\n" +
             "<table style=\"border-collapse: collapse; width: 100%;\" border=\"1\">\n" +
@@ -71,9 +71,10 @@ public class Help extends JButton {
             "<p>&nbsp;</p>\n" +
             "</body>\n" +
             "</html>";
+
     public Help(String name){
-        this.name = name;
-        setText(name);
+        super(name);
+
         // Pop dialog explaining program on click
         addActionListener(new ActionListener() {
             @Override
