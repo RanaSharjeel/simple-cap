@@ -38,7 +38,7 @@ Here's what simple-cap does:
 * Copy mode will basically let you crop the area you wish and then copy it to your clipboard. The application exits automatically after that.
 * Save mode is like copy, except it will prompt you to save to a location after a crop (in PNG/JPG format) and exit the program right after as well.
 
-That is all. I usually use screenshotting/cropping applications to copy code snippets and share them in my slack or discord servers. When I was using other screenshotting applications, I found the variety of features (such as built in image editors and just icon after icon) to be distracting from the true purpose, so I specifically made it to be super simple and close itself right after you're done to be minimally invasive.
+That is all. I usually use screenshotting/cropping applications to copy code snippets and share them in my slack or discord servers. When I was using other screenshotting applications, I found the variety of features (such as built in image editors and just icon after icon) to be distracting from the true purpose, so I specifically made it to be super simple and close itself right after you're done (to be minimally invasive).
 
 
 
