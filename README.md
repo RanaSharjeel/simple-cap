@@ -7,7 +7,7 @@
 <!-- PROJECT LOGO -->
 <br />
 <p align="center">
-  <a href="https://github.com/RanaSharjeel/simple-cap">
+  <a href="https://github.com/ranaxdev/simple-cap">
     <img src="res/logo.png" alt="Logo" width="80" height="80">
   </a>
 
@@ -19,9 +19,9 @@
     <br />
     <a href="https://youtu.be/zfDVTm_fjp0">Video Demo</a>
     ·
-    <a href="https://github.com/RanaSharjeel/simple-cap/releases/tag/1.0">Download</a>
+    <a href="https://github.com/ranaxdev/simple-cap/releases/tag/1.0">Download</a>
     ·
-    <a href="https://github.com/RanaSharjeel/simple-cap/issues">Report Bug</a>
+    <a href="https://github.com/ranaxdev/simple-cap/issues">Report Bug</a>
   </p>
 </p>
 
@@ -50,7 +50,7 @@ This was made in raw Java using the [Swing API](https://docs.oracle.com/javase/7
 <!-- GETTING STARTED -->
 ## Download
 
-As of `4/2/2021` there is a single release for the Windows x64 platform which can be downloaded from the [releases page](https://github.com/RanaSharjeel/simple-cap/releases/tag/1.0).
+As of `4/2/2021` there is a single release for the Windows x64 platform which can be downloaded from the [releases page](https://github.com/ranaxdev/simple-cap/releases/tag/1.0).
 
 ### Prerequisites
 
@@ -90,9 +90,9 @@ Distributed under the Apache 2.0 License. See `LICENSE` for more information.
 <!-- CONTACT -->
 ## Contact
 
-Sharjeel Qaiser - [@pitu_dev](https://twitter.com/pitu_dev) - sq18335@essex.ac.uk
+S.R. Qaiser - [@pitu_dev](https://twitter.com/pitu_dev) - sc21srq@leeds.ac.uk
 
-Project Link: [https://github.com/RanaSharjeel/simple-cap](https://github.com/RanaSharjeel/simple-cap)
+Project Link: [https://github.com/ranaxdev/simple-cap](https://github.com/RanaSharjeel/simple-cap)
 
 
 
